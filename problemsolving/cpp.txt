@@ -1,0 +1,7 @@
+For running c program in vs code
+
+for compiling file in cpp and creating .exe file use this command
+g++ file_name.cpp -o file_name.exe
+
+for running that program just type 
+file_name.exe
