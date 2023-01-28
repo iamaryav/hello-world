@@ -1,2 +1,6 @@
 problemsolving/*.exe
 problemsolving/*.o
+
+
+### VS Code ###
+.vscode/
