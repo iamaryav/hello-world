@@ -4,3 +4,4 @@ problemsolving/*.o
 
 ### VS Code ###
 .vscode/
+datastructures/algs4.jar
