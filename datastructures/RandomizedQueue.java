@@ -1,8 +1,5 @@
-package datastructures;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Random;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
@@ -42,7 +39,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if(noOfItems == 0){
             throw new NoSuchElementException();
         }
-        int index = new Random().nextInt(noOfItems);
+        int index = StdRandom.uniformInt(noOfItems);
         Item deletedItem = randomQueue[index];
 
         if(index != noOfItems-1){
@@ -61,11 +58,11 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (noOfItems == 0) {
             throw new NoSuchElementException();
         }
-        int random = new Random().nextInt(noOfItems);
+        int random = StdRandom.uniformInt(noOfItems);
         return randomQueue[random];
     }
 
-    public void resize(int newSize) {
+    private void resize(int newSize) {
 
         Item[] tempRandom = (Item[]) new Object[newSize];
         for (int i = 0; i < noOfItems; i++) {
