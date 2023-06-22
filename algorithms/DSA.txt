@@ -1,0 +1,48 @@
+Data structures - method to store information
+Algorithms - method to solve problem
+nlogn - linearithmic
+Data Structures
+
+Union find DS?
+Array
+Linked List
+Stack - Lifo
+Queue - FiFo
+Binary Heaps - Binary Tree / priority Queue
+
+Symbol table (Key, value) - Map/Dictionary
+
+Binary Search Tree - Binary tree in symmetric order, Linked list left key value right
+
+BALANCED BINARY SEARCH TREES
+2-3 Trees - Model to implement balanced trees
+Left leaning Red-black BST - Perfectly Balanced all in log
+B-Trees
+K-d trees (K-Dimensional tree)
+kd Tree
+
+Hashing and Hash Table
+
+Graphs (Directed and undirected graphs)
+
+DFS - Depth first search
+BFS
+Directed graphs-DiGraph
+Directed acylic graph - DAG - Precedence sort
+Minimum Spanning tree
+Greedy Algorithm, Kruskal's, Prim's
+Dijkstra's algo, bellmond ford's Algorithm
+ford-fulkerson algo
+Max flow - min cut algo
+string
+String manipulation
+Radix sort
+R way tries, Ternary search tries
+substring Search - Brute Force, Knuth-Morris-Pratt, Boyer-Moore, Robin-Karp
+Regular Expression
+Linear Programming, Simplex Algorithm
+
+
+NP - Nobody knows an efficient solution for that problem
+
+126, Ward 3, Vill & po - Barari Behta, Dist - Sitamarhi, Bihar, India
