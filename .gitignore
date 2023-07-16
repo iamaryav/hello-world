@@ -1,5 +1,7 @@
-problemsolving/*.exe
-problemsolving/*.o
+### Files to exclude ###
+*.exe
+*.o
+*.class
 
 
 ### VS Code ###
