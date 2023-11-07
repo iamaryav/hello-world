@@ -16,7 +16,9 @@ class User{
 
 
     public static UserBuilder builder(){
+        List<Integer> array = new ArrayList<>();
         return new UserBuilder();
+
     }
     
     public static class UserBuilder{
