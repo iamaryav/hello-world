@@ -59,5 +59,23 @@
         A media stream (a video chunk) from the given offset.
 
 5. ### Detailed component design
-    - 
+    - Service would be read heavy (200:1)
+    - Video storage? - Videos can be stored in a distributed file storage like HDFS or GlusterFS or S3.
+    - Traffic Management? - We should segregate our read traffic from write traffic. Since we will have multiple copies of each video.
+    - We can distribute our read traffic to different servers
+    - For metadata, we can have master-slave configurations (problem - Staleness in data)
+    - Thumbnail Storage? - Assumption 5 image per video so lots of image storing in the image will be result in more latencies, Bigtable can be a option
+    - Cache? - keeping thumbnail in cache will increase the speed
+    - Video Uploads - We should support resume from the same point upload if connection drops
+    - Video Encoding - Newly uploaded videos are stored on the server and a new tasks is added to the processing queue to encode the video into multiple format, generate thumbnails, check for copyright infrigement and so on once everything is completed it will be made available for view / sharing
+    - Metadata Sharding? - Since we have huge number of new videos everyday and our read load is extremely high, therefore, we need to distribute our data onto multiple machines so that we can perform read/write operations efficiently.
+        - Sharding based on UserId, Sharding based on VideoId
+    - Video Deduplication? - Will cause problems like More data storage, Caching, Network usage, Energy consumption, duplicate search results, longer videos startup times, and interrupted streaming Solutions - when user uploads videos we can run video matching algorithm e.g., Block Matching, Phase Correlation etc. to find duplications
+    - Load Balancing? - we should use Consistent Hashing among our cache servers, which will also help in balancing the load between cache servers. we can redirect user to less busy server if a server is very busy serving request for popular videos. We can dynamic HTTP redirections for this scenario. drawbacks multiple redirection if server doesn't have the video and server needs to have a client to make request
+    - Cache? - we can cache the videos that are more in demand for the regions and we can have our data cached near to that region we can use cache for thumbnail also, for balancing load on the cache servers we can use the load balancers.
+    Use the Memcahche to cache the data and Least Recent Use (LRU) can be a reasonable cache eviction policy.
+    we can use 80-20 rule 20% of daily read volume fo r videos is generating 80% of the traffic so we can try caching the 20% of the video that causes the most traffic
+    - CDN (Content Delivery Network) - It is a system of distrubuted servers that deliver web content to a user based in the geographic locations of the user. Our services can move popular videos to CDNs
+    - Fault Tolerance - We should use consistent hashing for distribution amond database servers.
+    
 
