@@ -9,4 +9,8 @@
 
 
 # DSA steps:
-1. 
+1. Requirement analysis 
+2. write algo or pseudo code
+3. Improve your algo for time and space complexity with the help of data structures
+4. start programming
+5. Test your programm
