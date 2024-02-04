@@ -14,3 +14,20 @@
 3. Improve your algo for time and space complexity with the help of data structures
 4. start programming
 5. Test your programm
+```
+Listen Carefully
+
+Example - Debug your example (Find edge case if any)
+
+Brute force solution - get something working
+
+Optimize - BUD(Bottlenecks, Unnecessary Work, Duplicated work) Optimization 
+
+Walk Through - Walk through your approach in detail
+
+Implement - Write beautiful code - Keep talking
+
+Test - test your code
+
+
+```
