@@ -2,6 +2,10 @@
 ## Requirements, Initial design, Final design, Evaluation
 1. Requirement and the goals of the system
 2. Capacity estimation and constraints
+    - Read and write (Traffic) estimation
+    - Storage estimation
+    -  Bandwidth estimation
+    - Memory estimation
 3. High Level design
 4. Database Schema and API Design
 5. Detailed component design
