@@ -27,7 +27,13 @@
     - Caching most frequently cached URLs following 80-20% rule: 170 GB/s
 3. #### System APIs
 ```
-createURL(api_dev_key, original_url, custom_alia=None, expire_date=None)
+String createURL(api_dev_key, original_url, custom_alia=None, expire_date=None)
+
+String deleteURL(api_dev_key, url_key)
+
+```
+4. #### Database desgin
+```
 
 ```
      
