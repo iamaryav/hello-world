@@ -8,6 +8,8 @@
  * return new string 
  * else return old string
  * 
+ * Instead of string use string builder
+ * 
  * Time complexity: 
  * O(n)
  * Space complexity:
@@ -24,16 +26,15 @@ public class StringCompression{
         List<String> listOfWords = List.of("aabcccccaaa", "aabbccddeeA", "abcdefghi");
 
         for(String word : listOfWords){
-            System.out.println(word);
+            System.out.println("word: " + word);
+            // check the compressed length in advance to avoid the string creation
+            // If we have length in advance we can initiate string builder in advance
+            // Avoid String concatenation
             int[] wordAnagram = wordAnagram(word);
             String compressedString = compressString(wordAnagram);
-            for(int i = 0; i < wordAnagram.length; i++){
-                System.out.print(wordAnagram[i]);
-            }
-            System.out.println();
-            System.out.println(compressedString);
+            System.out.println("compressed word : " + compressedString);
             String finalString = isStringCompressed(word, compressedString);
-            System.out.println(finalString);
+            System.out.println("Final String: " + finalString);
         }
                 
     }
@@ -51,14 +52,16 @@ public class StringCompression{
 
     public static String compressString(int[] wordAnagram){
 
-        String compressedString = "";
+        // String compressedString = "";
+        StringBuilder compressedString = new StringBuilder();
         for(int i = 0; i < wordAnagram.length; i++){
             if(wordAnagram[i] > 0){
-                System.out.println(String.valueOf(Character.forDigit(('a' + i), 10)));
-                String currentChar = String.valueOf(Character.forDigit(('a' + i), 10)) + String.valueOf(wordAnagram[i]);
+                // compressedString += String.valueOf((char)('a' + i)) + String.valueOf(wordAnagram[i]);
+                compressedString.append(String.valueOf((char)('a' + i)));
+                compressedString.append(String.valueOf(wordAnagram[i]));
             }
         }
-        return compressedString;
+        return compressedString.toString();
     }
 
     public static String isStringCompressed(String word, String compressedString){
