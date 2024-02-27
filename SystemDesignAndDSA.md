@@ -1,11 +1,12 @@
 # System Desgin designing steps
 ## Requirements, Initial design, Final design, Evaluation
-1. Requirement and the goals of the system
+1. Requirement and the goals of the system (Functional and Non functional)
 2. Capacity estimation and constraints
-    - Read and write (Traffic) estimation
+    - Read and write (Traffic) estimation (Read-Write ratio estimation)
     - Storage estimation
     -  Bandwidth estimation
     - Memory estimation
+    - Most estimation in /sec
 3. High Level design
 4. Database Schema and API Design
 5. Detailed component design
