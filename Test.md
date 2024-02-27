@@ -1,3 +1,0 @@
-- [ ] Hi
-- [x] Hello
-- [ ] Hola
