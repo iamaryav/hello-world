@@ -1,3 +1,3 @@
 # Hello, World!
 
-### Practicing programming.
+### Practice programming.
