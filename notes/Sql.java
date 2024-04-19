@@ -1,4 +1,29 @@
+/**
+ * selece duplicate from a column
+ * SELECT name, count(*) FROM users GROUP BY name HAVING count(*) > 1; 
+ * 
+ * Highest salary
+ * 
+ * select * from employee where salary = (select max(salary) from employee);
+ * 
+ * select name, max(salary) from employee where salary in (select salary from employee MINUS select max(salary) from employee)
+ * 
+ * select name, max(salary) from employee where salary < (select max(salary) from employee)
+ * 
+ * 
+ * select * from employee where salary = (select distince(salary) from employee order by desc limit n-1, 1);
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+
 public class Sql {
+
 
     /**
      * SQL Notes
