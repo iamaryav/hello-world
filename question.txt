@@ -1,0 +1,68 @@
+public class CustomSort{
+
+	private Map<String, Integer> sort(Map<String, Integer> input){
+		//TODO
+
+        Map<String, Integer> sortedInput;
+
+        
+	}
+
+	public static void main(String[] arsg){
+		Map<String, Integer> input = new HashMap<>();
+		input.put("Green", 3);
+		input.put("Red", 8);
+		input.put("Blue", 5);
+
+		Map<String, Integer> output = new CustomSort().sort(input);
+
+	}
+}
+
+
+
+public class MyCollection{
+	private int[] data = new int[300];
+    // data[2] 
+    // data[2] -> 
+	public void add(int x){
+		if(!checkIfPresent(x)){
+			//TODO Add x to data array
+            int index = x % data.length;
+            data[index] = x;
+		}
+	}
+	public boolean checkIfPresent(int x){
+		//TODO
+		// checks if x is present in data[] & returns true if present, else returns false
+        int index = x % 300;
+		return data[index] == x;
+	}
+	//Time Complexity should be O(1) & Don't duplicate the memory
+	public static void main(String[] args){
+		MyCollection c = new MyCollection();
+		c.add(1000);
+		c.add(200);
+		c.add(56);
+		c.add(1000);
+}
+}
+
+
+Company 
+Acronym 	Details
+
+TCS 		Tata Consultancy Services
+IBM 		International Business Machine
+AIIMS 		All India Institute of Medical Science
+TCS 		Tata Consultancy Services
+TCS 		Tata Consultancy Services
+IBM 		International Business Machine
+
+
+
+delete from company where id in (select Acronym from company group by Acronym having count > 1);
+
+
+
+

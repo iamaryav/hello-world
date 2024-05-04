@@ -25,6 +25,17 @@ public class RemoveDuplicate{
             System.out.println(user.id + " " + user.name);
         });
 
+        HashMap<Integer, User> uniqueUsers = new HashMap<>();
+        for(User user : users){
+            int id = user.id;
+            if(!uniqueUsers.containsKey(id)){
+                uniqueUsers.put(id, user);
+            }
+        }
+        uniqueUsers.entrySet().stream().forEach(entrySet -> {
+            System.out.println("map: " + entrySet.getKey() + " " + entrySet.getValue().name);
+        });
+
     }
 }
 
