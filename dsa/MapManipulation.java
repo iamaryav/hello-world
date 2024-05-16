@@ -1,9 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
-import dsa.Employee;
 
-
-public class Solution{
+public class MapManipulation{
 
 	private Map<String, Integer> sort(Map<String, Integer> input, List<Employee> employees, Map<Integer, Employee> employeeMap){
 
@@ -19,7 +17,7 @@ public class Solution{
 
 		System.out.println("Sorting through java Stream API using Key: ");
 
-		input.entrySet().stream().sorted(Map.Entry.comparingByKey())
+		input.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
 		.forEach(System.out::println);
 
 
@@ -65,6 +63,16 @@ public class Solution{
 		sortedEmployeeMap.entrySet().stream()
 		.forEach(System.out::println);
 
+		System.out.println("Sorting map based on the property of object in reverse order");
+		Map<Integer, Employee> revsortedEmployeeMap = 
+		employeeMap.entrySet().stream()
+		// .sorted(Map.Entry.comparingByKey())
+		.sorted((e1, e2) -> Integer.compare(e2.getValue().getId(), e1.getValue().getId()))
+		.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+		revsortedEmployeeMap.entrySet().stream()
+		.forEach(System.out::println);
+
 
 
 		return sortedInput;
@@ -96,7 +104,7 @@ public class Solution{
 		
 
 
-		Map<String, Integer> output = new Solution().sort(input, employees, employeeMap);
+		Map<String, Integer> output = new MapManipulation().sort(input, employees, employeeMap);
 
 
 	}
