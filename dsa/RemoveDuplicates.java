@@ -64,6 +64,26 @@ public class RemoveDuplicates{
         .average().getAsDouble();
 
 
+        // // Sequential approach (slower for large datasets)
+        // long startSequential = System.currentTimeMillis();
+        // long sumSequential = IntStream.rangeClosed(1, 10000)
+        //         .map(x -> x * 2)
+        //         .sum();
+        // long endSequential = System.currentTimeMillis();
+        // System.out.println("Sequential sum of squares: " + sumSequential);
+        // System.out.println("Sequential time taken (ms): " + (endSequential - startSequential));
+
+        // // Parallel approach (faster for large datasets)
+        // long startParallel = System.currentTimeMillis();
+        // long sumParallel = LongStream.rangeClosed(1, 10000)
+        //         .parallel()  // Apply parallel processing
+        //         .map(x -> x * 2)
+        //         .sum();
+        // long endParallel = System.currentTimeMillis();
+        // System.out.println("Parallel sum of squares: " + sumParallel);
+        // System.out.println("Parallel time taken (ms): " + (endParallel - startParallel));
+
+
 
        System.out.println("Count: " + count + " sum: " + sum + " min: " + min + " max: " + max + " avg: " + avg);
 
@@ -108,6 +128,20 @@ public class RemoveDuplicates{
        .forEach(e -> {
         System.out.println(e.getId());
        });
+
+       // Removing duplicate by HashSet
+       System.out.println("removing duplicate using hashset: ");
+
+       HashSet<Integer> empIds = new HashSet<>();
+
+
+       employees.stream()
+       .filter(emp -> empIds.add(emp.getId()))
+       .forEach(e -> {
+        System.out.println("ids: " + e.getId());
+       });
+
+       
 
 
     }

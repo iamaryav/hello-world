@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 public class TestThread{
     public static void main(String[] args){
 
-        Thread t1 = new Thread(new Thread1());
+        Thread t1 = new Thread(new Thread1()); // New State
         Thread t2 = new Thread(new Thread2());
         Thread3 t3 = new Thread3();
         Thread t4 = new Thread(() -> {
@@ -16,7 +16,7 @@ public class TestThread{
 
         t3.setPriority(Thread.MAX_PRIORITY);
 
-        t1.start();
+        t1.start(); - Runnable state
         t2.start();
         t3.start();
         t4.start();

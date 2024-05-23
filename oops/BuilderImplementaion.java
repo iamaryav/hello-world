@@ -1,4 +1,4 @@
-class BuilderImplementation{
+public class BuilderImplementation{
      String name;
      int age;
      String address;
@@ -16,9 +16,7 @@ class BuilderImplementation{
 
 
     public static BuilderImplementationBuilder builder(){
-        List<Integer> array = new ArrayList<>();
         return new BuilderImplementationBuilder();
-
     }
     
     public static class BuilderImplementationBuilder{
@@ -46,15 +44,12 @@ class BuilderImplementation{
         }
     }
 
-}
-
-public class Solution{
     public static void main(String[] args){
         BuilderImplementation user = BuilderImplementation.builder()
                         .name("Hero")
                         .age(1)
-                        .address("this is my address")
                         .build();
         System.out.println(user.name);
     }
+
 }
