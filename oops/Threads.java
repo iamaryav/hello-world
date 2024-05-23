@@ -1,7 +1,7 @@
 import java.lang.Thread;
 import java.util.stream.IntStream;
 
-public class TestThread{
+public class Threads{
     public static void main(String[] args){
 
         Thread t1 = new Thread(new Thread1()); // New State
