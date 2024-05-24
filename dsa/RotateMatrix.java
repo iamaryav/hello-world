@@ -41,24 +41,25 @@
  * 
  */
 
-
+import java.util.*;
 
 public class RotateMatrix{
     public static void main(String[] args){
 
+        
         int[][] matrix = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
 
+        System.out.println("Matrix: ");
 
-        for(int i = 0; i < 3; i++){
-           for(int j = 0; j < 3; j++) {
-            int temp 
-           }
-            System.out.println();
-        }
+
+        // Arrays.stream(matrix).forEach( m -> {
+        //     Arrays.stream(m).forEach(System.out::print);
+        //     System.out.println();
+        // });
 
         for(int i = 0; i < 3; i++){
            for(int j = 0; j < 3; j++) {
@@ -67,6 +68,40 @@ public class RotateMatrix{
             System.out.println();
         }
 
+        System.out.println("Transposed Matrix: ");
+
+        for(int i = 0; i < 3; i++){
+           for(int j = i; j < 3; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+           }
+        }
+
+        for(int i = 0; i < 3; i++){
+           for(int j = 0; j < 3; j++) {
+            System.out.print(matrix[i][j] + " ");
+           }
+            System.out.println();
+        }
+        
+        System.out.println("90 degree rotated clockwise Matrix: ");
+
+        for(int i = 0; i < 3; i++){
+           for(int j = i; j < 3 - i; j++) {
+                int n = matrix.length - 1;
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[n - i][j];
+                matrix[n - i][j] = temp;
+           }
+        }
+
+        for(int i = 0; i < 3; i++){
+           for(int j = 0; j < 3; j++) {
+            System.out.print(matrix[i][j] + " ");
+           }
+            System.out.println();
+        }
 
     }
 }
