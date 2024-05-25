@@ -3,41 +3,15 @@
  * 
  * n * n matrix - square matrix
  * 
- * Rotate matrix by 90 degress in counter clock wise 
- * in place
- * original matrix:
- * 1, 2, 3
- * 4, 5, 6
- * 7, 8, 9
- * 
- *First step: 
- * Transpose the matrix:
- * 1, 4, 7
- * 2, 5, 8
- * 3, 6, 9 
- * 
- * Second step:
- * 90 degree rotation in clockwise direction matrix:
- * 7, 4, 1
- * 8, 5, 2
- * 9, 6, 3 
- * 
- * Counter clock wise rotation:
- * 3, 6, 9
- * 2, 5, 8
- * 1, 4, 7 
- * 
  * Algorithms:
- * Loop through matrix and transpose the matrix
  * 
- * Loop through the matrix and swap the row for clockwise 
+ * matrix -> Transpose the matrix -> then change the row / column based on the direction
  * 
  *Time complexity:
  * O(n^2) 
  * 
  * Space complexity:
- * O(n)
- * 
+ * O(1)
  * 
  */
 
@@ -48,56 +22,49 @@ public class RotateMatrix{
 
         
         int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
         };
 
         System.out.println("Matrix: ");
 
-
-        // Arrays.stream(matrix).forEach( m -> {
-        //     Arrays.stream(m).forEach(System.out::print);
-        //     System.out.println();
-        // });
-
-        for(int i = 0; i < 3; i++){
-           for(int j = 0; j < 3; j++) {
-            System.out.print(matrix[i][j] + " ");
-           }
-            System.out.println();
-        }
-
-        System.out.println("Transposed Matrix: ");
-
-        for(int i = 0; i < 3; i++){
-           for(int j = i; j < 3; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = temp;
-           }
-        }
-
-        for(int i = 0; i < 3; i++){
-           for(int j = 0; j < 3; j++) {
-            System.out.print(matrix[i][j] + " ");
+        for(int i = 0; i < matrix.length; i++){
+           for(int j = 0; j < matrix.length; j++) {
+            System.out.print(matrix[i][j]+ " ");
            }
             System.out.println();
         }
         
-        System.out.println("90 degree rotated clockwise Matrix: ");
+        int n = matrix.length;
 
-        for(int i = 0; i < 3; i++){
-           for(int j = i; j < 3 - i; j++) {
-                int n = matrix.length - 1;
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[n - i][j];
-                matrix[n - i][j] = temp;
-           }
+        for(int layer = 0; layer < n / 2; layer++){
+
+            int first = layer; 
+            int last = n - 1 - layer; 
+
+            for(int j = first; j < last; j++){
+
+                int offset = j - first; 
+                int top = matrix[first][j]; 
+
+                matrix[first][j] = matrix[last - offset][first];
+
+                matrix[last - offset][first] = matrix[last][last - offset];
+
+                matrix[last][last - offset] = matrix[j][last];
+
+                matrix[j][last] = top;
+
+            }
+
         }
+        
+        System.out.println("Rotated Matrix: ");
 
-        for(int i = 0; i < 3; i++){
-           for(int j = 0; j < 3; j++) {
+        for(int i = 0; i < n; i++){
+           for(int j = 0; j <n; j++) {
             System.out.print(matrix[i][j] + " ");
            }
             System.out.println();
