@@ -11,7 +11,7 @@ class A {
         while(lb < ub){
             int mid = (lb + ub) / 2;
             if(ints[mid] == k){
-                return true;
+                return mid;
             }else if (k < ints[mid]){
                 ub = mid -1;
             }else{
@@ -20,7 +20,7 @@ class A {
 
         }
 
-        return false;
+        return -1;
 		
 	}
 }
