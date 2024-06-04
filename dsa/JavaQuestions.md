@@ -12,6 +12,9 @@ sort a list of object base on attributes using comparator
 Sort a map based on key or value pair
 sort a map based on keya and value(object's particular attribute) using comparator
 
+Name and Avg marks from list of students 
+Containg field name and mapof subject name and marks
+
 java Concepts:
 Multi threading concepts
 Life cycle of thread
