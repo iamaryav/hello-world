@@ -5,8 +5,8 @@ public class LinkedList{
     // Remove Last
     // prepend
     // Remove first
-    // get
-    // set
+    // get 
+    // set <--
     // insert
     // remove
     // reverse
@@ -21,6 +21,82 @@ public class LinkedList{
         tail = newNode;
         length = 1;
 
+    }
+
+    public Node get(int index){
+        Node currNode = head;
+        if(index > length - 1 || index < 0){
+            return null;
+        }
+        for(int i = 0; i < index; i++){
+            currNode = currNode.next;
+        }
+        return currNode;
+    }
+
+    public boolean set(int index, int value){
+        Node currNode = get(index);
+
+        if(currNode != null){
+            currNode.value = value;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean insert(int index, int value){
+        if(index < 0 || index > length){
+            return false;
+        }
+        if(index == 0){
+            prepend(value);
+            return true;
+        }else if(index == length){
+            append(value);
+            return true;
+        }else{
+            Node prevNode = get(index - 1);
+            Node newNode = new Node(value);
+            newNode.next = prevNode.next;
+            prevNode.next = newNode;
+            length += 1;
+            return true;
+        }
+    }
+
+    public Node remove(int index){
+
+        if(index < 0 || index >= length){
+            return null;
+        }
+
+        if(index == 0){
+            return removeFirst();
+        }else if(index == length - 1){
+            return remove();
+        }
+        Node prev = get(index - 1);
+        Node curr = prev.next;
+        prev.next = curr.next;
+        curr.next = null;
+        length -= 1;
+        return curr;
+    }
+
+    public void reverse(){
+        Node curr = head;
+        head = tail;
+        tail = curr;
+        Node prev = null;
+        Node nextNode = curr.next;
+
+
+        while(nextNode != null){
+            nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
     }
 
     public void prepend(int value){
@@ -153,6 +229,28 @@ public class LinkedList{
         list.getTail();
         list.getLength();
 
+        System.out.println("Get the value at the Index: ");
+        System.out.println("value at index 3 is: " + list.get(3).value);
+        
+        System.out.println("set the value at the Index: ");
+        System.out.println("set the value at index 2 is: " + list.set(2, 16));
+        list.printList();
+
+        System.out.println("Insert the value at the Index: ");
+        System.out.println("Insert the value at index 3 is: " + list.insert(3, 36));
+        list.printList();
+
+        System.out.println("Remove form the value at the Index: ");
+        System.out.println("Remove the value at index 3 is: " + list.remove(3).value);
+        list.printList();
+
+
+        System.out.println("Reverse the linked list: ");
+        list.reverse();
+        list.printList();
+
+
+        
 
 
     }
