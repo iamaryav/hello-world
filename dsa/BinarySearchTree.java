@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class BinarySearchTree{
 
     Node root;
@@ -129,23 +131,111 @@ public class BinarySearchTree{
         }
 
     }
-    
+
+    public List<Integer> BFS(){
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>();
+        List<Integer> results = new ArrayList<>();
+        queue.add(currentNode);
+
+        while(queue.size() > 0){
+            currentNode = queue.remove();
+            results.add(currentNode.value);
+            if(currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
+        }
+        return results;
+    }
+
+    // Depth first search
+    // preorder
+    public ArrayList<Integer> DFSPreOrder(){
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        class Traverse{
+            Traverse(Node currentNode){
+                results.add(currentNode.value);
+                if(currentNode.left != null){
+                    new Traverse(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
+
+    // post order
+    public ArrayList<Integer> DFSPostOrder(){
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        class Traverse{
+            Traverse(Node currentNode){
+                if(currentNode.left != null){
+                    new Traverse(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    new Traverse(currentNode.right);
+                }
+                results.add(currentNode.value);
+            }
+        }
+        new Traverse(root);
+        return results;
+    }   
+    // inorder traversal
+    public ArrayList<Integer> DFSInOrder(){
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        class Traverse{
+            Traverse(Node currentNode){
+                if(currentNode.left != null){
+                    new Traverse(currentNode.left);
+                }
+                results.add(currentNode.value);
+                if(currentNode.right != null){
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
+
     public static void main(String[] args){
         BinarySearchTree bst = new BinarySearchTree();
-        bst.rInsert(5);
-        bst.rInsert(6);
-        bst.rInsert(3);
-        bst.rInsert(9);
-        bst.rInsert(4);
-        bst.rInsert(10);
-        bst.rInsert(41);
-        System.out.println(bst.root.right.value);
-        System.out.println(bst.contains(9));
-        System.out.println(bst.rContains(9));
-        bst.rDelete(9);
-        System.out.println(bst.rContains(9));
+        // bst.rInsert(5);
+        // bst.rInsert(6);
+        // bst.rInsert(3);
+        // bst.rInsert(9);
+        // bst.rInsert(4);
+        // bst.rInsert(10);
+        // bst.rInsert(41);
+        // System.out.println(bst.root.right.value);
+        // System.out.println(bst.contains(9));
+        // System.out.println(bst.rContains(9));
+        // bst.rDelete(9);
+        // System.out.println(bst.rContains(9));
 
-        System.out.println("Min value: " + bst.minValue(bst.root));
+        // System.out.println("Min value: " + bst.minValue(bst.root));
+
+        bst.rInsert(47);
+        bst.rInsert(21);
+        bst.rInsert(76);
+        bst.rInsert(18);
+        bst.rInsert(27);
+        bst.rInsert(52);
+        bst.rInsert(82);
+        System.out.println(bst.BFS());
+        System.out.println(bst.DFSPreOrder());
+        System.out.println(bst.DFSPostOrder());
+        System.out.println(bst.DFSInOrder());
 
     }
 }
