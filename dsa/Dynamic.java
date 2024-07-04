@@ -12,6 +12,9 @@ public class Dynamic{
         return fib(n - 1) + fib(n - 2);
     }
 
+
+    // memoization
+
     public static HashMap<Integer, Integer> memo = new HashMap<>();
     public static int fibMemo(int n){
         if(memo.containsKey(n)){
