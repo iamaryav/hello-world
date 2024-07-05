@@ -6,6 +6,8 @@
  * 
  * select * from employee where salary = (select max(salary) from employee);
  * 
+ * Second Highest salary
+ * 
  * select name, max(salary) from employee where salary in (select salary from employee MINUS select max(salary) from employee)
  * 
  * select name, max(salary) from employee where salary < (select max(salary) from employee)
@@ -13,8 +15,21 @@
  * 
  * select * from employee where salary = (select distince(salary) from employee order by desc limit n-1, 1);
  * 
- * 
- * 
+ *DELETE FROM my_table
+ *WHERE id NOT IN (
+    SELECT id FROM (
+        SELECT MIN(id) AS id
+        FROM my_table
+        GROUP BY column1, column2
+    ) AS subquery
+    ); 
+
+ *SELECT c.customer_name, COUNT(o.order_id) AS order_count
+FROM customer c
+JOIN `order` o ON c.customer_id = o.customer_id
+GROUP BY c.customer_name
+ORDER BY order_count DESC
+LIMIT 5; 
  * 
  * 
  */
