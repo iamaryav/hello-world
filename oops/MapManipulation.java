@@ -7,6 +7,52 @@ public class MapManipulation{
 
 		System.out.println("Sorting through java Tree map: ");
 
+		// groupy by with age and average salary
+		// find highest salary in every dept
+		// find the number of employee in each dept
+		// group by with name and count
+		// dept wise employee;
+		// sum of all salaries;
+		// max and min salary in list
+		// find the distinct employee
+
+
+		// sum of salary
+		Double sumOfSalary = employees.stream()
+		.mapToDouble(Employee::getSalary)
+		.sum();
+		
+		System.out.println("sum of Salary: " + sumOfSalary);
+
+		Optional<Employee> maxSalary = employees.stream()
+			.max(Comparator.comparingDouble(Employee::getSalary));
+
+		System.out.println("max Salary: " + maxSalary.get().getSalary());
+
+		Optional<Employee> minSalary = employees.stream()
+			.min(Comparator.comparingDouble(Employee::getSalary));
+
+		System.out.println("min Salary: " + minSalary.get().getSalary());
+
+		Double avgSalary = employees.stream()
+			.collect(Collectors.averagingDouble(Employee::getSalary));
+
+		System.out.println("avg Salary: " + avgSalary);
+
+
+		// avg salary for same name
+
+		Map<String, Double> avgPersonSalary = employees.stream()
+			.collect(Collectors.groupingBy(
+				Employee::getName,
+				Collectors.averagingDouble(Employee::getSalary)	
+			));
+
+		System.out.println(avgPersonSalary);
+
+
+
+
 		TreeMap<String, Integer> sortedInput = new TreeMap<String, Integer>();
 		sortedInput.putAll(input);
 

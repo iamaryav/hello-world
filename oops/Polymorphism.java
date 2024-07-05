@@ -24,8 +24,11 @@ public class Polymorphism{
         // D d = new D();
         // d.printSomething(); // ? // Hello World! from A
 
-        Z ops = new Z();
-        ops.doSomething(); // Error
+        // Z ops = new Z();
+        // ops.doSomething(); // Error
+
+        P p = new Q();
+        p.print();
  
     }
 
@@ -77,4 +80,24 @@ interface Y{
 
 class Z implements X, Y{
 
+}
+
+class P{
+    public void print(){
+        System.out.println("class p");
+    }
+    
+    public void print1() throws RuntimeException{
+        System.out.println("class p");
+    }
+}
+
+class Q extends P{
+    protected void print(){
+        System.out.println("class Q");
+    }
+    
+    public void print1() throws Exception{
+        System.out.println("class p");
+    }
 }
