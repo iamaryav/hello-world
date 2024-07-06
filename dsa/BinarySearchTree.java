@@ -153,6 +153,7 @@ public class BinarySearchTree{
 
     // Depth first search
     // preorder
+    // print order - parent - leftchild - rightchild
     public ArrayList<Integer> DFSPreOrder(){
         ArrayList<Integer> results = new ArrayList<>();
         
@@ -172,6 +173,7 @@ public class BinarySearchTree{
     }
 
     // post order
+    // print order = leftchild - rightchild - parent
     public ArrayList<Integer> DFSPostOrder(){
         ArrayList<Integer> results = new ArrayList<>();
         
@@ -190,6 +192,7 @@ public class BinarySearchTree{
         return results;
     }   
     // inorder traversal
+    // print order - leftchild, parent - rightchild
     public ArrayList<Integer> DFSInOrder(){
         ArrayList<Integer> results = new ArrayList<>();
         
