@@ -1,4 +1,7 @@
 - Http and their versions
 - TCP and UDP
 - OSI Model
+- Consitent hashing
+- load Balancers
+- key value store
 - 
