@@ -1,7 +1,7 @@
 - Http and their versions
 - TCP and UDP
 - OSI Model
-- Consitent hashing
-- load Balancers
-- key value store
+- Consitent hashing - books
+- load Balancers - books
+- key value store - books
 - 
