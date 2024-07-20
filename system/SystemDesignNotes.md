@@ -34,4 +34,8 @@ C. Big table - Combines multiple files into one block to store in the disk and i
 ## Load Balancers:
     - Balance the load in between multiple servers
 
+## CAP Theorem,  Book - 90
+    ### Consistency, Availability, Partition Tolerance
+- Replication gives high availability but causes incosistencies among replicas
+- versioning and vector clocks are used to solve inconsistency problems
 
