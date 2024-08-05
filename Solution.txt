@@ -1,6 +1,0 @@
-immutable employee
-singleton interface / single thread multithread
-Functional Interface
-Thread deadlock
-exception in dynamic overloading parent less and chile base
-// first unique character using java stream
