@@ -1,0 +1,11 @@
+### Backend communication design patterns
+    - Request Response
+    - Synchronous and Asynchronous (worklaods)
+    - Push
+    - Short Polling
+    - Long Polling
+    - Server sent events
+    - Publisher / Subscriber
+    - Multiplexing and Demultiplexing (combining connections)
+    - Statefull vs stateless
+    - Sidecar pattern
