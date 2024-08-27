@@ -22,3 +22,4 @@
 ### Projects
     - Useful tools curl, netcat
     - Build UDP - server and clinet in python and c
+    - Build TCP - server and client in python and c
