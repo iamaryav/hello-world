@@ -6,6 +6,9 @@ public class Temp{
         List<Integer> arInt = List.of(0, 1, 0, 1, 0);
         List<Person> persons = List.of(new Person("Bob", 21), new Person("Tom", 20), new Person("Alice", 26), new Person("Alice", 23));
         List<String> names = List.of("Hi", "Hello", "Alice","Zebra", "Bob");
+        // Arrays.sort(errorCode);
+        // Arrays.sort(errorCode, Collections.reverseOrder());
+
 
 
         // List<Integer> filteredNumber = 
