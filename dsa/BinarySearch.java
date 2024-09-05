@@ -1,4 +1,3 @@
-// Java code below
 import java.util.*;
 
 class A {
@@ -17,10 +16,7 @@ class A {
             }else{
                 lb = mid + 1;
             }
-
         }
-
         return -1;
-		
 	}
 }
