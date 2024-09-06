@@ -36,6 +36,7 @@ public class ErrorCode{
         // ans += (remainError + q - 1) / q;
         // return ans;
 
+        // This is not working
         int N = errors.length;
         int maxError = 0;
         long totalError = 0;
@@ -67,6 +68,8 @@ public class ErrorCode{
         
         return projects;
     }
+
+    // This is working
 
     // public static int minprojectsHeap(int[] errorcode, int p, int q){
     //     int ans = 0;
