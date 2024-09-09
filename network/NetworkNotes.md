@@ -23,3 +23,7 @@
     - Useful tools curl, netcat
     - Build UDP - server and clinet in python and c
     - Build TCP - server and client in python and c
+### Protocols
+    - webRTC for Peer to peer connection
+
+### Backend execution Design patterns
