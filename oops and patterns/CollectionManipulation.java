@@ -6,6 +6,7 @@ public class Temp{
         List<Integer> arInt = List.of(0, 1, 0, 1, 0);
         List<Person> persons = List.of(new Person("Bob", 21), new Person("Tom", 20), new Person("Alice", 26), new Person("Alice", 23));
         List<String> names = List.of("Hi", "Hello", "Alice","Zebra", "Bob");
+        int[] nums = new int[]{3, 4, 6, 7, 8};
         // Arrays.sort(errorCode);
         // Arrays.sort(errorCode, Collections.reverseOrder());
 
@@ -17,6 +18,8 @@ public class Temp{
         // .distinct()
         // .sorted()
         // .toList();
+        // Find min, max, sum, avg of a list or array
+        int max = Arrays.stream(nums).max().getAsInt();
 
         List<Integer> filteredNumber = 
         numb.stream()
