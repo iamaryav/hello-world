@@ -1,3 +1,3 @@
 # find * | grep gsp 
-
-what is set paste?
+:set paste
+:set nopaste
