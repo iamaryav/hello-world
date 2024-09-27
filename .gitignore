@@ -7,3 +7,8 @@
 ### VS Code ###
 .vscode/
 datastructures/algs4.jar
+
+### Intellij ###
+.idea/
+hello-world.iml
+
