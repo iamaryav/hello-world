@@ -6,5 +6,8 @@ Top frequently asked Algorigthms:
 - Linked List
 - Backtracking
 - Dynamic Programming
-- DFS and BFS (single and Multisource), Union Find, Topological Sort
-- Dijkstra, BellmondFord
+- DFS and BFS (single and Multisource) - Most graph question
+- Union Find - Cycle detection
+- Topological Sort - Directed ordering find
+- Dijkstra - Shortest path algo
+- BellmondFord and Floyd-Warshall Algo
