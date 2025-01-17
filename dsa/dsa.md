@@ -11,3 +11,4 @@ Top frequently asked Algorigthms:
 - Topological Sort - Directed ordering find
 - Dijkstra - Shortest path algo
 - BellmondFord and Floyd-Warshall Algo
+- Prim's Algo, Kruskal Algo
