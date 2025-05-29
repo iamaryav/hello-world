@@ -7,6 +7,11 @@ public class MapManipulation{
 
 		System.out.println("Sorting through java Tree map: ");
 
+		// Q:
+		// create a counter using stream api using stream API
+		// print non first repeating character using stream API
+		// shift all zeroes to the end
+
 		// groupy by with age and average salary
 		// find highest salary in every dept
 		// find the number of employee in each dept
