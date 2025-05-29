@@ -11,8 +11,8 @@ public class MapManipulation{
 		// create a counter using stream api using stream API
 		// print non first repeating character using stream API
 		// shift all zeroes to the end
-		// SQL question:
-		// is in IBM Latop
+		// SQL question: Check question.txt
+		// 
 
 		// groupy by with age and average salary
 		// find highest salary in every dept
