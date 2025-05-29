@@ -1,0 +1,295 @@
+String s = "The Quick brown fox jumped over the lazy dog"
+find longest word from String and if two words has same length then find first: 
+
+FlatMap Example.
+What if Asynchronous call is failed ? If your service calling another external service and call failed for any reason, how will you handle it.
+Write Query for below tables : 
+Department
+--------------------
+Did |Dname
+-----------
+D1|Physics
+D2|Chem
+D3|Math
+ 
+ 
+Student
+-------------
+Sid|Sname
+----------
+1|An
+2|Bn
+3|Cn
+ 
+ 
+ClassAllocation
+---------------------
+Did|Sid
+--------------
+D1|S1
+D2|S2
+D1|S1
+ 
+ 
+Output
+------------
+S1|D1|Physics|An
+S2|D2|Chem|Bn
+S1|D1|Physics|Bn
+s3|||Cn
+Count students based on gender : 
+Sid|Sname|Gender
+----------
+1|An|Male
+2|Bn|Male
+3|Cn|Female
+have you  worked on performane tuning ?
+difference between thread and runnable ?
+what is inheritence ? What is overriding ?
+String s = ssccttcst => output : s2c2t2c1s1t1
+write test for handling exception ?
+what is immutable class ?
+how microservices communicate ?
+which exception will occure if any service is down ?
+how handle exception globally in spring boot ?
+how can one service API response will you use for second service in PostMan 
+what is lambda expression ? what is functional interface ?
+what is memory leak ? how to solve it ?
+What is actuator ?
+ImmutableExample
+2nd highest marks of student :
+service A  and service B
+from service A we need to listen the message and add IBM at of each message and push it to service B.
+Write a method in Java to return a list of employees (with name and age) whose age is greater than 30, sorted by name, from a given list.
+String 1: "hdfkabc yklmn yeugabccat" replace
+String 2: "abc" occurrences with reverse.
+output : "hdfkcba yklmn yeugcbacat"
+
+which design pattern circuit breaker follows in microservices ?
+what is object class and it's methods ?
+why java notsupport multiple inheritence ?
+design patterns you have worked ?
+MAppings in Hibernate ?
+Why discovery is needed in eureka ? what is purpose ?
+What is flow of request in Microservice Architecture ?
+find 3rd highest : with less complexity
+int[] num = {2, 2, 3, 3, 1, 4};
+How many ways to write query in JPA ?
+factorial using recursion
+Input [1,2,3,4,5,6,7,8,9,10,11,17]
+output:
+[1,17],
+[7,11],
+[8,10]
+how did you tested rest api's ?
+difference between Arrays.asList() and new Array()
+how you create rest webservices
+difference between stringbuffer and stringbuilder
+how will you create spring maven project ?
+how will you handle global exception 
+why we create static method in java
+aggregate function in sql
+caching in spring boot
+design patterns for microservices
+rest controller vs controller
+difference between collection and stream.
+what is functional interface
+ 
+
+ 
+
+Java 8 feature
+
+Lambada expression
+
+Functional interface
+
+Default method
+
+Static method
+
+Stream API
+
+Method references
+
+Optional Class
+
+Memory related changes Introduce Metaspace
+
+HashMap in linked list is converted BST.
+
+ 
+
+ 
+
+Design pattern
+
+Solid principle
+
+Singleton class
+
+ 
+
+Map and flatmap
+
+Filter
+
+Reduce
+
+ 
+
+Available Functional interface
+
+Predicate
+
+Function
+
+Supplier
+
+consumer
+
+ 
+
+Program for Stream API
+
+Class Employee {
+
+String name;
+
+List<String> phoneNumber;
+
+String deptName;
+
+Double salaray;
+
+}
+
+ 
+
+Find 2 highest salary from employee class
+
+Group on department and give the count  
+
+List on all Phone numbers
+
+Filter employee name with start with name "Vi"
+
+ 
+
+String s = "Hello I am java";
+
+Find the occurrence in using stream API
+
+Reverse the string using stream API
+
+ 
+
+Addition of array elements using stream api
+
+ 
+
+Addition pair for integer list as provided number
+
+{1,2,3,4,5,6,7,8,9,0} -> 6 and pair for it{ {1,5},{2,4},{0,6}}
+
+ 
+
+What is final and static
+
+Create a Immutable class
+
+HashCode  & Equal method and contract
+
+Volatile keyword
+
+Serialization & De Serialization
+
+Linkedlist / arraylist/Map /set
+
+ConcurrentModification Execption and overcome on it
+
+ConcurrnetHashMap / CopyOnWriteArrayList
+
+Comparable / Comparator
+
+ 
+
+Thread / Multithread/
+
+Synchronized block/ Synchronized block
+
+Executor framework
+
+Compatible future and why they came.
+
+Sleep and wait method
+
+ 
+
+Spring bean creation / life Cycle bean
+
+List out Annotation
+
+Scope of beans
+
+Controller vs. Rest Controller
+
+Spring vs. spring boot
+
+@SpringBootApplication means  
+
+@autoconfiguration and give some default auto configuration in spring boot.
+
+GetMapping vrs RequestMapping
+
+ 
+
+Spring security
+
+How you handle security in your project  
+
+Authentication and Authorization  
+
+ 
+
+Testing framework  
+
+Written any test cases
+
+Mock, spy and inject mock
+
+How to test Exception case
+
+ 
+
+JPA or Hibernate
+
+Annotation for JPA Entity table column
+
+OneToMany, ManyToOne, OneToOne, ManyToMany
+
+Composite Key and how we can add in entity class as ID  
+
+For Joins how we can write JPA query
+
+How we can collect 2 table data in JPA.
+
+ 
+
+Microservice
+
+Advantage and disadvantage
+
+Api gateway
+
+Service discovery
+
+How to monitor microservices
+
+Eureka server
+
+Microservice design patterns
+
+Fault tolerance and circuit breaker
+
+SAGA and CQRS 
