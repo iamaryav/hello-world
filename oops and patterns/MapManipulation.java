@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.*;
+import java.util.function.Function;
 
 public class MapManipulation{
 
@@ -8,11 +9,46 @@ public class MapManipulation{
 		System.out.println("Sorting through java Tree map: ");
 
 		// Q:
-		// create a counter using stream api using stream API
-		// print non first repeating character using stream API
 		// shift all zeroes to the end
 		// SQL question: Check question.txt
-		// 
+
+		// create a counter using stream api using stream API
+		String sent = "hi hi hi hello hello namaste god";
+		// List<String> words = List.of("hi", "hi", "hi", "hello", "hello", "namaste", "god");
+		String[] words = sent.split("\\s");
+		// Arrays.stream(words).forEach(System.out::println);
+		Map<String, Long> counter = Arrays.stream(sent.trim().toLowerCase().split("\\s"))
+		.filter(word -> !word.isEmpty())
+		.collect(Collectors.groupingBy(word -> word, Collectors.counting()));
+
+		// Conventional way of printing
+		System.out.println("conventional way printing");
+		for(Map.Entry<String, Long> pair : counter.entrySet()){
+			System.out.println(pair.getKey() + ": " + pair.getValue());
+		}
+		System.out.println("new way printing");
+		counter.forEach((k, v) -> System.out.println(k + ": " + v));
+
+		// print non first repeating character using stream API
+		String inputsss = "swiss";
+		Optional<Character> firstNonRepeating = inputsss.chars()
+		.mapToObj(c -> (char) c)
+		.collect(Collectors.groupingBy(
+			Function.identity(),
+			LinkedHashMap::new,
+			Collectors.counting()
+		))
+		.entrySet()
+		.stream()
+		.filter(entry -> entry.getValue() == 1)
+		.map(Map.Entry::getKey)
+		.findFirst();
+
+		firstNonRepeating.ifPresentOrElse(
+			ch -> System.out.println("first non repeating: " + ch),
+			() -> System.out.println("not present")
+		);
+
 
 		// groupy by with age and average salary
 		// find highest salary in every dept

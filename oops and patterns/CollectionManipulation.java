@@ -21,6 +21,7 @@ public class Temp{
         // Find min, max, sum, avg of a list or array
         int max = Arrays.stream(nums).max().getAsInt();
 
+        // sort all the even number in descending order remove duplicate as well
         List<Integer> filteredNumber = 
         numb.stream()
         .filter(n -> n % 2 == 0)
@@ -54,6 +55,7 @@ public class Temp{
         List<Person> sPerson = 
         persons.stream()
         .sorted(nameSort)
+        //.sorted((p1, p2) -> Integer,compare(p1.getName(), p2.getName())
         .toList();
 
         // Sorting with multiple comparator for an object
