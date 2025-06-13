@@ -13,3 +13,7 @@ Top frequently asked Algorigthms:
 - Dijkstra - Shortest path algo
 - BellmondFord and Floyd-Warshall Algo
 - Prim's Algo, Kruskal Algo
+
+Note:
+Permutation - Arranging the list of words or numbers order matters
+Combination - Selecting the k items from collections of n items
